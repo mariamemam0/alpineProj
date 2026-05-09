@@ -17,19 +17,33 @@
             </style>
         @endif
 
+        <style>
+            .active { color : blue;}
+
+        </style>
+
         <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     </head>
     <body>
-<div x-data="{show:false}">
+<div x-data="{currentTab: 'first'}">
+    <button @click="currentTab= 'first'" :class="{'active' : currentTab === 'first'}">First</button>
+    <button @click="currentTab= 'second' " :class="{'active' : currentTab === 'second'}">Second</button>
+    <button @click="currentTab= 'third'" :class="{'active' : currentTab === 'third'}">Third</button>
 
-    <button @click="show=!show" x-text="show ? 'Hide' : 'show'">Toggle</button>
-
-    <div x-show="show">
-        <a href="/" style="display: block">Home</a>
-        <a href="/" style="display: block">About</a>
-        <a href="/" style="display: block">Contact</a>
-
+    <div style="border: 1px dotted gray; padding: 1rem; margin-top: 1rem;">
+    <div x-show="currentTab == 'first'">
+        <p>First Tap.</p>
     </div>
+
+    <div x-show="currentTab == 'second'">
+        <p>Second Tap.</p>
+    </div>
+
+    <div x-show="currentTab == 'third'">
+        <p>Third Tap.</p>
+    </div>
+    </div>
+
 </div>
     </body>
 </html>
