@@ -30,9 +30,23 @@
         x-data="{
            form: {
            name: ''
+           },
+
+           user:null,
+
+           submit() {
+                  fetch('https://reqres.in/api/users', {
+                     method: 'POST',
+                     headers: {'Content-Type':'application/json'},
+                     body: JSON.stringify(this.form)
+                  })
+                  .then(response => response.json())
+                  .then(user => this.user = user);
            }
 
-        }">
+        }"
+        @submit.prevent="submit"
+        >
             <div class="mb-6">
                 <label class="block mb-2 uppercase font-bold text-xs text-gray-700" for="name">
                     Name
@@ -46,6 +60,10 @@
 
                 <p x-text="name"></p>
             </div>
+
+            <template x-if="user">
+                <div x-text="'The user' + user.name + 'was created at' + user.createdAt"></div>
+            </template>
 
         </form>
     </body>
