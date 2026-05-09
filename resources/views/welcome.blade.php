@@ -38,8 +38,10 @@
                 type="text"
                 name="name"
                 id="name"
-                 :value="name"
+                x-model="name"
                 required>
+
+                <p x-text="name"></p>
             </div>
 
         </form>
