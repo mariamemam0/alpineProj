@@ -38,7 +38,8 @@
                 type="text"
                 name="name"
                 id="name"
-                x-model="name"
+                :value="name"
+                @input="name= $event.target.value"
                 required>
 
                 <p x-text="name"></p>
