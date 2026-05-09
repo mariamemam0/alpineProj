@@ -28,7 +28,10 @@
     <body class="p-10 max-w-lg mx-auto">
         <form
         x-data="{
-           name: 'Mariam Emam'
+           form: {
+           name: ''
+           }
+
         }">
             <div class="mb-6">
                 <label class="block mb-2 uppercase font-bold text-xs text-gray-700" for="name">
@@ -38,8 +41,7 @@
                 type="text"
                 name="name"
                 id="name"
-                :value="name"
-                @input="name= $event.target.value"
+                x-model="form.name"
                 required>
 
                 <p x-text="name"></p>
