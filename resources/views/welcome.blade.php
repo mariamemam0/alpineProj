@@ -19,8 +19,10 @@
 
         <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     </head>
-    <body class="bg-[#FDFDFC] dark:bg-[#0a0a0a] text-[#1b1b18] flex p-6 lg:p-8 items-center lg:justify-center min-h-screen flex-col">
-
-    <h1 x-data="{message: 'I love Alpine'}" x-text="message"></h1>
+    <body>
+<div x-data="{message: 'Hello World'}">
+    <h1 x-text="message"></h1>
+    <button @click="message = 'Changed!'">CLick Me</button>
+</div>
     </body>
 </html>
