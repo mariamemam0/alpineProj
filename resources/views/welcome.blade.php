@@ -22,28 +22,26 @@
 
         </style>
 
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3/dist/tailwind.min.css" rel="stylesheet">
         <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     </head>
-    <body>
-<div x-data="{currentTab: 'first'}">
-    <button @click="currentTab= 'first'" :class="{'active' : currentTab === 'first'}">First</button>
-    <button @click="currentTab= 'second' " :class="{'active' : currentTab === 'second'}">Second</button>
-    <button @click="currentTab= 'third'" :class="{'active' : currentTab === 'third'}">Third</button>
+    <body class="p-10 max-w-lg mx-auto">
+        <form
+        x-data="{
+           name: 'Mariam Emam'
+        }">
+            <div class="mb-6">
+                <label class="block mb-2 uppercase font-bold text-xs text-gray-700" for="name">
+                    Name
+                </label>
+                <input class="border border-gray-400 p-2 w-full"
+                type="text"
+                name="name"
+                id="name"
+                 :value="name"
+                required>
+            </div>
 
-    <div style="border: 1px dotted gray; padding: 1rem; margin-top: 1rem;">
-    <div x-show="currentTab == 'first'">
-        <p>First Tap.</p>
-    </div>
-
-    <div x-show="currentTab == 'second'">
-        <p>Second Tap.</p>
-    </div>
-
-    <div x-show="currentTab == 'third'">
-        <p>Third Tap.</p>
-    </div>
-    </div>
-
-</div>
+        </form>
     </body>
 </html>
