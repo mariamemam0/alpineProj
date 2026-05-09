@@ -20,9 +20,16 @@
         <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     </head>
     <body>
-<div x-data="{first: 0,second: 0}">
-    <input type="text" x-model.number="first"> + <input type="text" x-model.number="second"> = <output x-text="first + second"></output>
+<div x-data="{show:false}">
 
+    <button @click="show=!show" x-text="show ? 'Hide' : 'show'">Toggle</button>
+
+    <div x-show="show">
+        <a href="/" style="display: block">Home</a>
+        <a href="/" style="display: block">About</a>
+        <a href="/" style="display: block">Contact</a>
+
+    </div>
 </div>
     </body>
 </html>
