@@ -20,9 +20,9 @@
         <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     </head>
     <body>
-<div x-data="{message: 'Hello World'}">
-    <h1 x-text="message.toUpperCase()"></h1>
-    <input type="text" x-model="message">
+<div x-data="{first: 0,second: 0}">
+    <input type="text" x-model.number="first"> + <input type="text" x-model.number="second"> = <output x-text="first + second"></output>
+
 </div>
     </body>
 </html>
