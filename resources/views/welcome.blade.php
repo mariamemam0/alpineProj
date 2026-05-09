@@ -22,7 +22,7 @@
     <body>
 <div x-data="{message: 'Hello World'}">
     <h1 x-text="message.toUpperCase()"></h1>
-    <input type="text" x-bind:value="message">
+    <input type="text" :value="message">
 </div>
     </body>
 </html>
