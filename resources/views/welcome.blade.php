@@ -26,45 +26,15 @@
         <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     </head>
     <body class="p-10 max-w-lg mx-auto">
-        <form
-        x-data="{
-           form: {
-           name: ''
-           },
-
-           user:null,
-
-           submit() {
-                  fetch('https://reqres.in/api/users', {
-                     method: 'POST',
-                     headers: {'Content-Type':'application/json'},
-                     body: JSON.stringify(this.form)
-                  })
-                  .then(response => response.json())
-                  .then(user => this.user = user);
-           }
-
-        }"
-        @submit.prevent="submit"
-        >
-            <div class="mb-6">
-                <label class="block mb-2 uppercase font-bold text-xs text-gray-700" for="name">
-                    Name
-                </label>
-                <input class="border border-gray-400 p-2 w-full"
-                type="text"
-                name="name"
-                id="name"
-                x-model="form.name"
-                required>
-
-                <p x-text="name"></p>
-            </div>
-
-            <template x-if="user">
-                <div x-text="'The user' + user.name + 'was created at' + user.createdAt"></div>
-            </template>
-
+    <div class="bg-gray-300 px-10 py-10 rounded" x-data="{ tasks: [] , newTask: ''}">
+        <form @submit.prevent="tasks.push(newTask)">
+            <input type="text" placeholder="Go to market..." x-model="newTask">
         </form>
+       <ul class="list-disc">
+           <template x-for="(task, index) in tasks" :key="index">
+               <li x-text="task"></li>
+           </template>
+       </ul>
+    </div>
     </body>
 </html>
