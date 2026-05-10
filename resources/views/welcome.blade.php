@@ -26,7 +26,7 @@
         <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     </head>
     <body class="p-10 max-w-lg mx-auto">
-    <div class="bg-gray-300 px-10 py-10 rounded" x-data="{ tasks: [] , newTask: ''}">
+    <div class="bg-gray-300 px-10 py-10 rounded" x-data="taskApp()">
         <form @submit.prevent="tasks.push({body: newTask, completed: false }); newTask = ''">
             <input type="text"
                    placeholder="Go to market..."
