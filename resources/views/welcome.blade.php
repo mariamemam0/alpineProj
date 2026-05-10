@@ -27,12 +27,19 @@
     </head>
     <body class="p-10 max-w-lg mx-auto">
     <div class="bg-gray-300 px-10 py-10 rounded" x-data="{ tasks: [] , newTask: ''}">
-        <form @submit.prevent="tasks.push(newTask)">
-            <input type="text" placeholder="Go to market..." x-model="newTask">
+        <form @submit.prevent="tasks.push({body: newTask, completed: false }); newTask = ''">
+            <input type="text"
+                   placeholder="Go to market..."
+                   x-model="newTask"
+                   class="w-full px-1"
+            >
         </form>
-       <ul class="list-disc">
+       <ul class="list-disc mt-3">
            <template x-for="(task, index) in tasks" :key="index">
-               <li x-text="task"></li>
+               <li>
+                   <input type="checkbox" x-model="task.completed">
+                   <span x-text="task.body"></span>
+               </li>
            </template>
        </ul>
     </div>
