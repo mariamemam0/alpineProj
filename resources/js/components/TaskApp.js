@@ -1,4 +1,4 @@
-window.taskApp = () => {
+export default () => {
     return {
         tasks: [],
         newTask: '',
