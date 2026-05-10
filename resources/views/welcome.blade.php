@@ -38,25 +38,11 @@
            <template x-for="(task, index) in tasks" :key="index">
                <li>
                    <input type="checkbox" x-model="task.completed">
-                   <span x-text="task.body" :class="{'line-through' : task:completed}"></span>
+                   <span x-text="task.body" :class="{'line-through' : task.completed}"></span>
                </li>
            </template>
        </ul>
     </div>
     </body>
-<script>
-    let taskApp = () => {
-        return {
-            tasks: [],
-            newTask: '',
 
-            submit() {
-                this.tasks.push({body: this.newTask, completed: false});
-                this.newTask = '';
-            }
-
-
-        };
-    }
-</script>
 </html>
