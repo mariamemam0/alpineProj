@@ -38,7 +38,7 @@
            <template x-for="(task, index) in tasks" :key="index">
                <li>
                    <input type="checkbox" x-model="task.completed">
-                   <span x-text="task.body"></span>
+                   <span x-text="task.body" :class="{'line-through' : task:completed}"></span>
                </li>
            </template>
        </ul>
