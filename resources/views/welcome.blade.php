@@ -28,7 +28,12 @@
     <body class="grid items-center justify-center h-screen">
     <div x-data="{show: true}">
      <div class="w-12 h-12" >
-         <div class="bg-green-400 w-full h-full" x-show="show"></div>
+         <div class="bg-green-400 w-full h-full"
+              x-show="show"
+              x-transition:enter-start="transition duration-1000 opacity-0"
+              x-transition:enter-end="transition duration-1000 opacity-100"
+
+         ></div>
      </div>
         <button @click="show = ! show">Toggle</button>
     </div>
