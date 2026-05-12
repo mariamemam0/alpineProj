@@ -25,24 +25,14 @@
         <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3/dist/tailwind.min.css" rel="stylesheet">
         <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     </head>
-    <body class="p-10 max-w-lg mx-auto">
-    <div class="bg-gray-300 px-10 py-10 rounded" x-data="taskApp()">
-        <form @submit.prevent="tasks.push({body: newTask, completed: false }); newTask = ''">
-            <input type="text"
-                   placeholder="Go to market..."
-                   x-model="newTask"
-                   class="w-full px-1"
-            >
-        </form>
-       <ul class="list-disc mt-3">
-           <template x-for="(task, index) in tasks" :key="index">
-               <li>
-                   <input type="checkbox" x-model="task.completed">
-                   <span x-text="task.body" :class="{'line-through' : task.completed}"></span>
-               </li>
-           </template>
-       </ul>
+    <body class="grid items-center justify-center h-screen">
+    <div x-data="{show: true}">
+     <div class="w-12 h-12" >
+         <div class="bg-green-400 w-full h-full" x-show="show"></div>
+     </div>
+        <button @click="show = ! show">Toggle</button>
     </div>
     </body>
+
 
 </html>
