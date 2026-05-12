@@ -30,8 +30,10 @@
      <div class="w-12 h-12" >
          <div class="bg-green-400 w-full h-full"
               x-show="show"
-              x-transition:enter-start="transition duration-1000 opacity-0"
-              x-transition:enter-end="transition duration-1000 opacity-100"
+              x-transition:enter="transition duration-1000"
+
+              x-transition:enter-start="opacity-0"
+              x-transition:enter-end="opacity-100"
 
          ></div>
      </div>
