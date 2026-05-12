@@ -30,7 +30,7 @@
      <div class="w-12 h-12" >
          <div class="bg-green-400 w-full h-full"
               x-show="show"
-              x-transition:enter="transition transform duration-1000"
+              x-transition:enter="transition transformtransform duration-1000"
               x-transition:enter-start="opacity-0 scale-0"
               x-transition:enter-end="opacity-100 scale-100"
 
