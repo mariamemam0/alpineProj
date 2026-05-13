@@ -27,9 +27,15 @@
     </head>
     <body class="p-12">
 
+
      <div x-data ="{ show: false , message: '' }"
           x-show="show"
-          @flash.window="show = true ; message = $event.detail;"
+          x-transition.opacity.scale.75.duration
+          @flash.window="
+                   show = true ; message = $event.detail;
+
+                   setTimeout(() => show = false , 3000 );
+                   "
           x-text="message"
           class="fixed bottom-0 right-0 mb-4 mr-4 bg-blue-500 text-while p-4 rounded"
      >
