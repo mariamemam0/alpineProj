@@ -27,7 +27,7 @@
     </head>
     <body class="p-12">
     <div x-data>
-        <button @click="flash('Hello There')">Trigger Flash Message </button>
+        <button @click="$dispatch('flash', 'Hello There Again')">Trigger Flash Message </button>
     </div>
 
      <div x-data ="{ show: false , message: '' }"
