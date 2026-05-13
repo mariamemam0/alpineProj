@@ -29,7 +29,13 @@
     <div x-data="{show: false}" @click.away="show = false">
            <button @click="show = ! show">Links</button>
 
-        <div class=" absolute bg-black text-white py-2 rounded mt-1" x-show="show">
+        <div class=" absolute bg-black text-white py-2 rounded mt-1"
+             x-show="show"
+             x-transition:enter="transition duration-1000 transform"
+             x-transition:enter-start="scale-75"
+             x-transition:enter-end="scale-100"
+
+        >
             <a class= "block hover:bg-gray-800 text-xs py-px px-4" href="#">Edit</a>
             <a class= "block hover:bg-gray-800 text-xs py-px px-4" href="#">Delete</a>
             <a class= "block hover:bg-gray-800 text-xs py-px px-4" href="#">Report Spam</a>
