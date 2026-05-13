@@ -26,7 +26,9 @@
         <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     </head>
     <body class="p-12">
-
+    <div x-data>
+        <button @click="flash('Hello There')">Trigger Flash Message </button>
+    </div>
 
      <div x-data ="{ show: false , message: '' }"
           x-show="show"
