@@ -26,8 +26,9 @@
         <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     </head>
     <body class="p-12">
-     <div x-data>
-         <button @mouseover="alert('I was clicked')">Click</button>
+
+     <div x-data @flash.window="alert($event.detail)">
+
      </div>
     </body>
 
