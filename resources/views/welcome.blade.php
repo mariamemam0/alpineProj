@@ -26,22 +26,14 @@
         <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     </head>
     <body class="grid items-center justify-center h-screen">
-    <div x-data="{show: true}">
-     <div class="w-12 h-12" >
-         <div class="bg-green-400 w-full h-full"
-              x-show="show"
-              x-transition:enter="transition transformtransform duration-1000"
-              x-transition:enter-start="opacity-0 scale-125"
-              x-transition:enter-end="opacity-100 scale-100"
+    <div x-data="{show: false}">
+           <button @click="show = ! show">Links</button>
 
-              x-transition:leave="transition duration-200"
-              x-transition:leave-start="opacity-100"
-              x-transition:leave-end="opacity-0"
-
-
-         ></div>
-     </div>
-        <button @click="show = ! show">Toggle</button>
+        <div class="bg-black text-white py-2 rounded mt-1" x-show="show">
+            <a class= "block hover:bg-gray-800 text-xs py-px px-4" href="#">Edit</a>
+            <a class= "block hover:bg-gray-800 text-xs py-px px-4" href="#">Delete</a>
+            <a class= "block hover:bg-gray-800 text-xs py-px px-4" href="#">Report Spam</a>
+        </div>
     </div>
     </body>
 
