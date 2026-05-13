@@ -27,7 +27,12 @@
     </head>
     <body class="p-12">
 
-     <div x-data @flash.window="alert($event.detail)">
+     <div x-data ="{ show: false , message: '' }"
+          x-show="show"
+          @flash.window="show = true ; message = $event.detail;"
+          x-text="message"
+          class="fixed bottom-0 right-0 mb-4 mr-4 bg-blue-500 text-while p-4 rounded"
+     >
 
      </div>
     <script>
