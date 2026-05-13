@@ -26,7 +26,7 @@
         <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     </head>
     <body class="grid items-center justify-center h-screen">
-    <div x-data="{show: false}">
+    <div x-data="{show: false}" @click.away="show = false">
            <button @click="show = ! show">Links</button>
 
         <div class=" absolute bg-black text-white py-2 rounded mt-1" x-show="show">
