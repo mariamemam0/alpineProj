@@ -30,6 +30,9 @@
      <div x-data @flash.window="alert($event.detail)">
 
      </div>
+    <script>
+        window.flash = message =>window.dispatchEvent(new CustomEvent('flash',{detail:message}));
+    </script>
     </body>
 
 
